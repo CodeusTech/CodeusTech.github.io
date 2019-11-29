@@ -1,0 +1,8 @@
+{
+  "docs": {
+    "Overview": ["xcs/xcs", "xcs/xcs-install", "xcs/xcs-config", "xcs/xcs-shell"],
+    "Language": ["xcsl/xcsl", "xcsl/xcsl-primitives", "xcsl/xcsl-ops", "xcsl/xcsl-conditions", 
+             "xcsl/xcsl-functions", "xcsl/xcsl-types"],
+    "Environment": ["xcse/xcse", "xcse/xcse-modules", "xcse/xcse-sockets", "xcse/xcse-ffi"]
+  }
+}
