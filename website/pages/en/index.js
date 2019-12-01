@@ -65,7 +65,6 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
             <Button href={docUrl('xcs/xcs.html')}>XCS Wiki</Button>
           </PromoSection>
         </div>
@@ -119,9 +118,8 @@ class Index extends React.Component {
         {[
           {
             content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
+              'XCS can use many of the current standard networking protocols ' +
+              'and also implements a new decentralized networking protocol ([S-CHIRP](https://ieeexplore.ieee.org/document/8326301)).',
             image: `${baseUrl}img/undraw_code_review.svg`,
             imageAlign: 'left',
             title: 'Decentralized Network Communication',

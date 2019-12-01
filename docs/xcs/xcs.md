@@ -1,6 +1,6 @@
 ---
 id: xcs
-title: XCS Overview
+title: X-Ita Control System
 ---
 
 ## Contents
@@ -11,3 +11,7 @@ Here, you can find information useful for development of X-Ita Control System La
 * [Shell Commands](xcs-shell.html)
 
 ***
+
+X-Ita Control System (XCS) is divided into two subsystems -- [Language](../xcsl/xcsl.html) and [Environment](../xcse/xcse.html).  
+
+The language (XCSL) provides a user-interface and a means for writing custom applications/modules.

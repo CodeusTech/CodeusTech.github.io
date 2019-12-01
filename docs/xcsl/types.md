@@ -5,10 +5,9 @@ title: Type Declarations
 
 ## Arbitrary Types
 
-XCSL tries to emphasize modularity throughout system design, whenever possible.  This principle is largely upheld by the internally data type system, especially the concept of **Arbitrary Types**.  
+XCSL tries to emphasize modularity throughout system design, whenever possible.  This principle is largely upheld by the internal data type system, especially the concept of **Arbitrary Types**.  
 
-Arbitrary types allow functions to be efficiently built for the base case.  Take the following as an example:
-
+Arbitrary types allow functions to be efficiently built for most generalized case.  For example:
 ```ocaml
 let sum x y = x + y
 ```
@@ -32,7 +31,7 @@ type address = int
 
 ## Type Constructors
 
-**Type Constructors** are user-defined shorthand for declaring specified instance variables of a type.  
+**Type Constructors** are used to define different instances of the same type of data.  
 
 See the following color example:
 
@@ -40,7 +39,7 @@ See the following color example:
 type color = Red | Green | Blue | RGB of (int; int; int)
 ```
 
-*Red*, *Green*, and *Blue* are all valid constructors of the color type.  Additionally, there is a constructor (*RGB*) that accepts three integer parameters.  This set of constructors allows developers to quickly use common colors, as well as form colors by mixing red, green, and blue.
+*Red*, *Green*, and *Blue* are all valid constructors of the color type.  Additionally, there is a constructor (*RGB*) that accepts three integer parameters.  This set of constructors allows developers to quickly use common colors, as well as form new colors by mixing red, green, and blue.
 
 
 ***

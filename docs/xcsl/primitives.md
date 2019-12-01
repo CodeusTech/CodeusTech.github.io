@@ -74,17 +74,22 @@ This example list would include 5 elements, starting with *1* and ending with *5
 
 ***
 
-### Anonymous Tuples
-
-**Anonymous Tuples** are containers for collections of mixed-type data on XCS. Unlike other containers, each element within the tuple's type expression can be independent of other elements' types.
-
-See below for a tuple example:
-```
-let odd = 1 ; "hello" ; 3.14
-```
-
-***
-
 ### Arrays
 
 **Arrays** are similar to Linked Lists, except array entries are concatenated in memory (linked list entries are scattered in memory and dynamically linked).
+
+***
+
+### Tuples
+
+**Tuples** are containers for collections of mixed-type data on XCS. Unlike other containers, each tuple element's type expression can be independent of other elements' types.
+
+See below for a tuple example:
+```haskell
+let odd = 1 ; "hello" ; 3.14;;
+
+odd.{0};;  -- Returns 1
+odd.{1};;  -- Returns "hello"
+odd.{2}    -- Returns 3.14  
+```
+

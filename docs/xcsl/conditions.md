@@ -15,7 +15,7 @@ if a <= b
     then  True
     else  False
 ```
-If the value of '*a*' is less than the value of '*b*', the entire clause will return *True*.  Otherwise, the clause will return *False*.
+**If** the value of **'a' is less than or equal to 'b'**, the entire clause will return *True*.  Otherwise, the clause will return *False*.
 This can be used to control the behavior of a function under variable situations.
 ***
 
@@ -28,7 +28,8 @@ Examine the following code:
 match x with 
     True    -> 1,
     "Hello" -> 2,
-    Int y   -> y;;
+    Int y   -> y,
+    _       -> 0 (* Default Case *)
 ```
 This *match* statement filters *x* into one of three integer values.  Through the magic of arbitrary typing, *x* can be any type that provides a constructor for Booleans (*True*), Strings (*"Hello"*), and Integers (*Int y*).  The result of a match case is constrained to a single type or typeclass; in this example, it resulted in an integer.  
 
@@ -37,9 +38,10 @@ For a more practical example, see this function that sorts a color variable into
 ```ocaml
 match color 
   with 
-    Red   -> RGB 1 0 0
-    Green -> RGB 0 1 0
-    Blue  -> RGB 0 0 1 
+    Red   -> RGB 1 0 0,
+    Green -> RGB 0 1 0,
+    Blue  -> RGB 0 0 1,
+    _     -> RGB 0 0 0 (* Default Case *)
 ```
 
 ***

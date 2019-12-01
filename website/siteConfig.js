@@ -28,6 +28,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {page: '/', label: 'Home'},
     {page: 'about', label: 'About Us'},
     {blog: true, label: 'News'},
     {doc: 'xcs/xcs', label: 'XCS Wiki'},

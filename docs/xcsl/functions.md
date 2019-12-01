@@ -46,12 +46,15 @@ Functions can always be *overloaded*, though there can only ever be a single uni
 See below for a practical example. 
 
 ```haskell
+let calculate   = 3;;
 let calculate x = x % 3;;
-
 let calculate x = x / 3.14 
 ```
 
-Let's review the two definitions of *calculate*.  In the first calculate definition, x is used in modulus, so it *must* be an integer.  In the second definition, x can be any real number type (e.g. *float*, *double*).  
+Let's review the three definitions of *calculate*.  
+* In the first calculate definition, there is no parameter given and it always results in the same value.  
+* In the second calculate definition, x is used in modulus, so it *must* be an integer.  
+* In the third definition, x can be any real number type (e.g. *float*, *double*).  
 
 This is a totally valid way to define multiple functionalities for a single function identifier, without signficantly losing runtime efficiency.
 
