@@ -48,9 +48,10 @@ match color
 
 ## is
 
-**... is ...** statements are quickhand type/constructor equivalence checkers.  If the left-hand-side variable matches the right-hand-side type/constructor, the enture statement returns *True*, otherwise it returns *False*.
+**... is ...** statements are quickhand type/constructor equivalence checkers.  If the left-hand-side variable matches the right-hand-side type/constructor, the entire statement returns *True*, otherwise it returns *False*.
 
-For the next examples, assume '*b*' is a constant of type *color*, and constructor *Blue*.  The examples would both return *1*.
+For the next examples, assume '*b*' is a constant of type *color*, and constructor *Blue*.  
+The examples would both return *1*.
 ```python
 if b is color
   then 1

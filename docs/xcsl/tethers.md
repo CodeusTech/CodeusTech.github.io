@@ -7,7 +7,7 @@ title: Tether Operations
 ## Tether Rules
 
 **Process Tethers** are conceptual bonds that allow two concurrently active source modules to communicate.  For two (or more) modules to form a tether, they must abide by the following rules:
-* 1.) Tethers must be formed at **instant** of execution between source modules
+* 1.) Tethers must be formed between source modules at **instant** of execution
 * 2.) Source Modules can arbitrarily form tethers with Tether Modules
 * 3.) Tether Modules cannot form tethers with non-system modules
 
@@ -24,7 +24,24 @@ This function will trigger *Module1-3* to all run simultaneously on separate thr
  * 1.) Modules can communicate with any other member of a mutual swarm.  
  * 2.) Modules can be in any number of swarms, concurrently.  
  * 3.) Modules can allow multiple active instances or restrict to a single concurrent instance.  
- 
+
+***
+
+
+The final return value for each module can then be accessed with the tuple operator.
+
+For demonstration purposes, assume Module1, Module2, and Module3 all return integer values.
+```ocaml
+let wrapper = tether Module1 Module2 Module3
+  in 
+    wrapper.{0} + wrapper.{1} + wrapper.{2}
+```
+In a practical example, each of these integer values might represent their corresponding module's status.
+
+If you assume that `0` represents a successful run for each Module, the wrapper function's sum would:
+* Evaluate after each individual module concluded
+* Evaluate to 0 if all modules concluded successfully
+
 ***
 
 ### Sending Messages

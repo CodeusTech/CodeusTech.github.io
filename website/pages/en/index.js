@@ -64,7 +64,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
+            <Button href="#try">Coming Soon</Button>
             <Button href={docUrl('xcs/xcs.html')}>XCS Wiki</Button>
           </PromoSection>
         </div>
@@ -109,12 +109,13 @@ class Index extends React.Component {
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
         <h2>Coming Soon</h2>
-        <MarkdownBlock>XCS is bootable, but it is still in pre-alpha stage. Updates on *Alpha* releases to follow in near future.</MarkdownBlock>
+        <MarkdownBlock>XCS is bootable, but it is still in pre-alpha stage. 
+          Updates on *Alpha* releases to follow in near future.</MarkdownBlock>
       </div>
     );
 
     const NetworkFeatures = () => (
-      <Block id="try">
+      <Block>
         {[
           {
             content:
@@ -129,11 +130,11 @@ class Index extends React.Component {
     );
 
     const Schedule = () => (
-      <Block background="dark">
+      <Block background="dark" id="try">
         {[
           {
             content:
-              'This is another description of how this project is useful',
+              'Chart depicting time until release coming soon.',
             image: `${baseUrl}img/undraw_note_list.svg`,
             imageAlign: 'right',
             title: 'XCS (*Alpha Release*) Arriving Soon!',
@@ -167,10 +168,10 @@ class Index extends React.Component {
             title: 'Reimangined Architecture',
           },
           {
-            content: 'The content of my second feature',
+            content: 'A functional programming language (XCSL) is provided<br> to develop firmware and applications.',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Intuitive User Interface',
           },
         ]}
       </Block>

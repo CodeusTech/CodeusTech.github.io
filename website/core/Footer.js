@@ -46,11 +46,14 @@ class Footer extends React.Component {
             <a href={this.props.config.baseUrl}>
               Home
             </a>
-            <a href={this.docUrl('xcs/xcs.html', this.props.language)}>
-              Wiki
-            </a>
             <a href={this.docUrl('about_us.html', this.props.language)}>
               About Us
+            </a>
+            <a href={this.props.config.baseUrl + "blog/"}>
+              News
+            </a>
+            <a href={this.docUrl('xcs/xcs.html', this.props.language)}>
+              XCS Wiki
             </a>
           </div>
         </section>

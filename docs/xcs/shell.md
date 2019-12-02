@@ -7,12 +7,11 @@ title: Shell Commands
 
 ## Shell Functions
 
-The XCS shell provides quick and easy frontend access to several system modules.  When operating within the shell, it is not necessary to make *requests* to system functions (e.g. *ls*).  Instead, you can call the service function directly, and the shell will make the request automatically.
+The XCS shell provides quick and easy frontend access to several system modules.  When operating within the shell, it is not necessary to make *requests* to system functions.  Instead, you can call the service function directly, and the shell will make the request automatically.
 
 Tether Modules that are automatically activated upon startup include:
-* XCS Filesystem
+* Firmware Drivers
 * Network Sockets
-* Foreign Function Interface
 
 
 ***

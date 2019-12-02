@@ -32,7 +32,7 @@ class About extends React.Component {
       </Container>
     );
 
-    const Features = () => (
+    const Directors = () => (
       <Frame layout="fourColumn">
         {[
           {
@@ -50,20 +50,52 @@ class About extends React.Component {
             title: 'Cody Fagley',
           },
           {
-            content: 'The content of my second feature',
+            content: 'Professional Description/Photo will be up on/before Dec 2.',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Lisa Fagley',
           },
         ]}
       </Frame>
     );
 
+  const Advisors = () => (
+    <Frame layout="fourColumn">
+    {[
+      {
+        content:  '*dbohlin1@uwyo.edu*<br>' +
+                  '**David Bohling (Dave)** previously served as Principle Investigator for a DARPA semiconductor project. ' +
+                  'His investigation was ultimately completed under-budget and faster than expected.  Dave has a proven ' +
+                  'track record of successfully managing various technologies in concurrency.',
+        image: `${baseUrl}img/dave.jpg`,
+        imageAlign: 'top',
+        title: 'David Bohling',
+      },
+      {
+        content: 'Codeus Tech is honored to be advised by **Edward Hart**, previous Deputy Director in Information Security of National Security Agency (NSA).  ' +
+                 'Ed has overseen development of some of the world\'s most advanced and secure IoT devices.',
+        imageAlign: 'top',
+        title: 'Ed Hart',
+      },
+      {
+        content:  '**Jerad Stack** is a successful Founder/CEO and Wyoming business leader.  Jerad has had a prolific career in engineering and ' +
+                  'simulation with Firehole Composites (later acquired by AutoDesk).  He continues to use his expertise to help growing companies ' +
+                  'reach their next steps.',
+        image: `${baseUrl}img/jerad.jpg`,
+        imageAlign: 'top',
+        title: 'Jerad Stack',
+      },
+    ]}
+    </Frame>
+  );
+
     return (
       <div>
         <div className="mainContainer">
-          <h2 className="hDirectors">Directors</h2>
-          <Features />
+          <h2 className="hAbout">Directors</h2>
+          <Directors />
+          <h2 className="hAbout">Advisors</h2>
+          <Advisors />
         </div>
       </div>
     );
