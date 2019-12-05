@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://CodeusTech.github.io/blog</id>
+    <id>https://CodeusTech.github.io/codeus-website/blog</id>
     <title>Codeus Tech Blog</title>
     <updated>2019-11-29T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="https://CodeusTech.github.io/blog"/>
+    <link rel="alternate" href="https://CodeusTech.github.io/codeus-website/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Codeus Tech news and events.</subtitle>
-    <logo>https://CodeusTech.github.io/undefined</logo>
+    <logo>https://CodeusTech.github.io/codeus-website/undefined</logo>
     <rights>Copyright © 2019 Codeus Tech, LLC</rights>
     <entry>
         <title type="html"><![CDATA[Codeus named SEWYIL finalist]]></title>
-        <id>https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html</id>
-        <link href="https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html">
+        <id>https://CodeusTech.github.io/codeus-website/blog/2019/11/29/codeus-named-sewyil-finalist.html</id>
+        <link href="https://CodeusTech.github.io/codeus-website/blog/2019/11/29/codeus-named-sewyil-finalist.html">
         </link>
         <updated>2019-11-29T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Startups Across the State]]></title>
-        <id>https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html</id>
-        <link href="https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html">
+        <id>https://CodeusTech.github.io/codeus-website/blog/2019/01/07/startups-across-the-state.html</id>
+        <link href="https://CodeusTech.github.io/codeus-website/blog/2019/01/07/startups-across-the-state.html">
         </link>
         <updated>2019-01-07T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p><a href="https://www.uwyo.edu/uwyo/current/20-2/features/startups-across-the-state.html">Full Article Here</a></p>
