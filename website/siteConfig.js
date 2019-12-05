@@ -11,7 +11,7 @@
 
 const siteConfig = {
   title: 'Codeus Tech', // Title for your website.
-  tagline: 'Performant, Hyper-Secure IoT Devices',
+  tagline: 'Securing the Internet of Things',
   disableTitleTagline: true,
   url: 'https://CodeusTech.github.io', // Your website URL
   baseUrl: '/codeus-tech/', // Base URL for your project */
@@ -20,11 +20,9 @@ const siteConfig = {
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'codeus-tech',
+  projectName: 'codeus-website',
   organizationName: 'CodeusTech',
   // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [

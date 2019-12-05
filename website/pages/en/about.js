@@ -50,8 +50,11 @@ class About extends React.Component {
             title: 'Cody Fagley',
           },
           {
-            content: 'Professional Description/Photo will be up on/before Dec 2.',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            content:  '*lisa.ann.fagley@gmail.com*<br>' +
+                      'Lisa is also a Wyoming native and alumni of University of Wyoming (Finance). She has been a key asset in ' +
+                      'fine tuning Codeus Tech\'s financial plan. As primary financier of Codeus Tech, Lisa also ' +
+                      'helps Wells Fargo clientele make better long-term financial decisions. ',
+            image: `${baseUrl}img/lisa.jpg`,
             imageAlign: 'top',
             title: 'Lisa Fagley',
           },
@@ -64,7 +67,7 @@ class About extends React.Component {
     {[
       {
         content:  '*dbohlin1@uwyo.edu*<br>' +
-                  '**David Bohling (Dave)** previously served as Principle Investigator for a DARPA semiconductor project. ' +
+                  '**David Bohling (Dave)** previously served as Principle Investigator on semiconductor research, funded by DARPA. ' +
                   'His investigation was ultimately completed under-budget and faster than expected.  Dave has a proven ' +
                   'track record of successfully managing various technologies in concurrency.',
         image: `${baseUrl}img/dave.jpg`,
@@ -73,7 +76,9 @@ class About extends React.Component {
       },
       {
         content: 'Codeus Tech is honored to be advised by **Edward Hart**, previous Deputy Director in Information Security of National Security Agency (NSA).  ' +
-                 'Ed has overseen development of some of the world\'s most advanced and secure IoT devices.',
+                 'At NSA, Ed has overseen development of some of the world\'s most advanced and secure IoT devices. ' + 
+                 'In private industry he has played a key role in vastly successful entites, e.g. [Recorded Future](https://www.recordedfuture.com/).',
+        image: `${baseUrl}img/ed.png`,
         imageAlign: 'top',
         title: 'Ed Hart',
       },

@@ -148,7 +148,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              "New OS/hardware scheme significantly enhances:\n" +
+              "New computer system significantly enhances:\n" +
               "* Cybersecurity\n" + "* Performance\n" + "* Data Reliability\n",
             image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
             imageAlign: 'right',
@@ -162,10 +162,10 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Faster and more secure than other IoT computer systems',
+            content: 'Faster and more secure than alternative IoT computer systems (e.g. Linux)',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
-            title: 'Reimangined Architecture',
+            title: 'Automated Hardware Management',
           },
           {
             content: 'A functional programming language (XCSL) is provided<br> to develop firmware and applications.',
