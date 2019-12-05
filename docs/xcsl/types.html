@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Type Declarations · Codeus Tech</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Arbitrary Types"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Type Declarations · Codeus Tech"/><meta property="og:type" content="website"/><meta property="og:url" content="https://CodeusTech.github.io/"/><meta property="og:description" content="## Arbitrary Types"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/codeus_black.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://CodeusTech.github.io/blog/atom.xml" title="Codeus Tech Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://CodeusTech.github.io/blog/feed.xml" title="Codeus Tech Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Codeus Tech</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/about" target="_self">About Us</a></li><li class=""><a href="/blog/" target="_self">News</a></li><li class="siteNavGroupActive"><a href="/docs/xcs" target="_self">XCS Wiki</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Language</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcs">X-Ita Control System</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/install">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/config">Optimization Modes</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/shell">Shell Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcsl">XCS Language</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/comments">Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/primitives">Literal Values</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/ops">Arithemic/Logical Operations</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/xcsl/types">Type Declarations</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/conditions">Conditional Expressions</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/functions">Functional Declarations</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/tethers">Tether Operations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Environment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcse">XCS Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/modules">Module Types</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/firmware">Firmware Interface</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/sockets">Network Sockets</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/ffi">Foreign-Function Interface</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Type Declarations</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="arbitrary-types"></a><a href="#arbitrary-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arbitrary Types</h2>
+<p>XCSL tries to emphasize modularity throughout system design, whenever possible.  This principle is largely upheld by the internal data type system, especially the concept of <strong>Arbitrary Types</strong>.</p>
+<p>Arbitrary types allow functions to be efficiently built for most generalized case.  For example:</p>
+<pre><code class="hljs css language-ocaml"><span class="hljs-keyword">let</span> sum x y = x + y
+</code></pre>
+<p>While many languages require parameters to be explicitly typed, XCSL recognizes that <em>x</em> and <em>y</em> can be any type that implements addition.  This leads to a single modular <em>sum</em> function that can interchangeably add integers, real numbers, characters, and booleans.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="type-aliases"></a><a href="#type-aliases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Aliases</h2>
+<p>It is frequently helpful to duplicate an existing type with an additional name, aka <strong>Alias</strong>.  This allows code to be naturally <strong>self-documenting</strong>.  Self-documenting code is a principle where internal functionality is made obvious via nomenclature.  See a common example below:</p>
+<pre><code class="hljs css language-ocaml"><span class="hljs-keyword">type</span> address = <span class="hljs-built_in">int</span>
+</code></pre>
+<p><strong>Memory addresses</strong> are integer values, where the integer itself does not matter, but rather the value in memory it <em>points</em> to.  When working with addresses, it is better practice to label values as addresses rather than integers to distiquish memory pointers from data.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="type-constructors"></a><a href="#type-constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Constructors</h2>
+<p><strong>Type Constructors</strong> are used to define different instances of the same type of data.</p>
+<p>See the following color example:</p>
+<pre><code class="hljs css language-ocaml"><span class="hljs-keyword">type</span> color = <span class="hljs-type">Red</span> | <span class="hljs-type">Green</span> | <span class="hljs-type">Blue</span> | <span class="hljs-type">RGB</span> <span class="hljs-keyword">of</span> (<span class="hljs-built_in">int</span>; <span class="hljs-built_in">int</span>; <span class="hljs-built_in">int</span>)
+</code></pre>
+<p><em>Red</em>, <em>Green</em>, and <em>Blue</em> are all valid constructors of the color type.  Additionally, there is a constructor (<em>RGB</em>) that accepts three integer parameters.  This set of constructors allows developers to quickly use common colors, as well as form new colors by mixing red, green, and blue.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="complex-types"></a><a href="#complex-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Complex Types</h2>
+<p>The aforementioned type constructors built simple type instances (e.g. no <em>records</em>).  However, users are able to define <strong>Complex Types</strong> with records.  See the following example using a <em>person</em> type.</p>
+<pre><code class="hljs css language-ocaml"><span class="hljs-keyword">type</span> person =
+    name   : <span class="hljs-built_in">string</span>,
+    age    : <span class="hljs-built_in">int</span>,
+    height : <span class="hljs-built_in">int</span> 
+</code></pre>
+<p>Then, it can be called to create specific people.</p>
+<pre><code class="hljs css language-haskell"><span class="hljs-title">constant</span> jim <span class="hljs-keyword">of</span> person = 
+    name = <span class="hljs-string">"jim"</span>,
+    age = <span class="hljs-number">21</span>,
+    height = <span class="hljs-number">67</span>
+</code></pre>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/xcsl/ops"><span class="arrow-prev">← </span><span>Arithemic/Logical Operations</span></a><a class="docs-next button" href="/docs/xcsl/conditions"><span>Conditional Expressions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#arbitrary-types">Arbitrary Types</a></li><li><a href="#type-aliases">Type Aliases</a></li><li><a href="#type-constructors">Type Constructors</a></li><li><a href="#complex-types">Complex Types</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2019 Codeus Tech, LLC</section></footer></div></body></html>

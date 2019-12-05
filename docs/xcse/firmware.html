@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Firmware Interface · Codeus Tech</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## SPI"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Firmware Interface · Codeus Tech"/><meta property="og:type" content="website"/><meta property="og:url" content="https://CodeusTech.github.io/"/><meta property="og:description" content="## SPI"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/codeus_black.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://CodeusTech.github.io/blog/atom.xml" title="Codeus Tech Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://CodeusTech.github.io/blog/feed.xml" title="Codeus Tech Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Codeus Tech</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/about" target="_self">About Us</a></li><li class=""><a href="/blog/" target="_self">News</a></li><li class="siteNavGroupActive"><a href="/docs/xcs" target="_self">XCS Wiki</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Environment</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcs">X-Ita Control System</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/install">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/config">Optimization Modes</a></li><li class="navListItem"><a class="navItem" href="/docs/xcs/shell">Shell Commands</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Language</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcsl">XCS Language</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/comments">Documentation</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/primitives">Literal Values</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/ops">Arithemic/Logical Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/types">Type Declarations</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/conditions">Conditional Expressions</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/functions">Functional Declarations</a></li><li class="navListItem"><a class="navItem" href="/docs/xcsl/tethers">Tether Operations</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Environment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/xcse">XCS Environment</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/modules">Module Types</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/xcse/firmware">Firmware Interface</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/sockets">Network Sockets</a></li><li class="navListItem"><a class="navItem" href="/docs/xcse/ffi">Foreign-Function Interface</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Firmware Interface</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="spi"></a><a href="#spi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPI</h2>
+<p>XCS provides a standard <strong>Serial Peripheral Interface (SPI)</strong> interface library for developing custom SPI devices/firmware.  Only one SPI driver can be activated at once per device.</p>
+<h6><a class="anchor" aria-hidden="true" id="import-spi-interface"></a><a href="#import-spi-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import SPI Interface</h6>
+<pre><code class="hljs">open<span class="hljs-built_in"> System </span><span class="hljs-string">"SPI"</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="spi-pin-settings"></a><a href="#spi-pin-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPI Pin Settings</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-title">request</span> spi_cs_high <span class="hljs-comment">-- Sets CS pin to 'High' setting</span>
+<span class="hljs-title">request</span> spi_cs_low  <span class="hljs-comment">-- Sets CS pin to 'Low' setting</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="read-data-from-spi"></a><a href="#read-data-from-spi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Read Data from SPI</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns u32 value from connected SPI device</span>
+<span class="hljs-title">request</span> spi_read  <span class="hljs-comment">--  Retrieves next entry after read</span>
+<span class="hljs-title">request</span> spi_peek  <span class="hljs-comment">--  Leaves entry after read</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="write-data-to-spi"></a><a href="#write-data-to-spi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write Data to SPI</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns/Writes u32 value to connected SPI device</span>
+<span class="hljs-title">request</span> spi_write x
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-spi-driver"></a><a href="#using-spi-driver" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using SPI Driver</h3>
+<p>Once a driver is written for an SPI device, it can be enabled in the XCS shell with the following command:</p>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Note: the file MUST point to a Tether Module</span>
+<span class="hljs-title">file</span> spi_driver = <span class="hljs-string">"driver-file-name"</span>
+<span class="hljs-title">activate</span> <span class="hljs-type">SPI</span> spi_driver
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="i2c"></a><a href="#i2c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>I2C</h2>
+<p>XCS provides a standard <strong>Inter-Integrated Circuits (I2C)</strong> interface library for developing custom I2C devices/firmware.  Only one I2C driver can be activated at once per device.</p>
+<h6><a class="anchor" aria-hidden="true" id="import-i2c-interface"></a><a href="#import-i2c-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import I2C Interface</h6>
+<pre><code class="hljs">open<span class="hljs-built_in"> System </span><span class="hljs-string">"I2C"</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="read-data-from-i2c"></a><a href="#read-data-from-i2c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Read Data from I2C</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns u32 value from connected I2C device</span>
+<span class="hljs-title">request</span> i2c_read  <span class="hljs-comment">--  Retrieves next entry after read</span>
+<span class="hljs-title">request</span> i2c_peek  <span class="hljs-comment">--  Reads entry without retreiving next entry after read</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="write-data-to-i2c"></a><a href="#write-data-to-i2c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write Data to I2C</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns/Writes u32 value to connected I2C device</span>
+<span class="hljs-title">request</span> i2c_write x
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-i2c-driver"></a><a href="#using-i2c-driver" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using I2C Driver</h3>
+<p>Once a driver is written for an I2C device, it can be enabled in the XCS shell with the following command:</p>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Note: the file MUST point to a Tether Module</span>
+<span class="hljs-title">file</span> i2c_driver = <span class="hljs-string">"driver-file-name"</span>
+<span class="hljs-title">activate</span> <span class="hljs-type">I2C</span> i2c_driver
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="uart"></a><a href="#uart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UART</h2>
+<p>XCS provides a standard <strong>Serial Peripheral Interface (UART)</strong> interface library for developing custom UART devices/firmware.  Only one UART driver can be activated at once per device.</p>
+<h6><a class="anchor" aria-hidden="true" id="import-uart-interface"></a><a href="#import-uart-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import UART Interface</h6>
+<pre><code class="hljs">open<span class="hljs-built_in"> System </span><span class="hljs-string">"UART"</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="read-data-from-uart"></a><a href="#read-data-from-uart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Read Data from UART</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns u32 value from connected UART device</span>
+<span class="hljs-title">request</span> uart_read  <span class="hljs-comment">--  Retrieves next entry after read</span>
+<span class="hljs-title">request</span> uart_peek  <span class="hljs-comment">--  Leaves entry after read</span>
+</code></pre>
+<h6><a class="anchor" aria-hidden="true" id="write-data-to-uart"></a><a href="#write-data-to-uart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Write Data to UART</h6>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Returns/Writes u32 value to connected UART device</span>
+<span class="hljs-title">request</span> uart_write x
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-uart-driver"></a><a href="#using-uart-driver" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using UART Driver</h3>
+<p>Once a driver is written for an UART device, it can be enabled in the XCS shell with the following command:</p>
+<pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Note: the file MUST point to a Tether Module</span>
+<span class="hljs-title">file</span> uart_driver = <span class="hljs-string">"driver-file-name"</span>
+<span class="hljs-title">activate</span> <span class="hljs-type">UART</span> uart_driver
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/xcse/modules"><span class="arrow-prev">← </span><span>Module Types</span></a><a class="docs-next button" href="/docs/xcse/sockets"><span>Network Sockets</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#spi">SPI</a><ul class="toc-headings"><li><a href="#using-spi-driver">Using SPI Driver</a></li></ul></li><li><a href="#i2c">I2C</a><ul class="toc-headings"><li><a href="#using-i2c-driver">Using I2C Driver</a></li></ul></li><li><a href="#uart">UART</a><ul class="toc-headings"><li><a href="#using-uart-driver">Using UART Driver</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2019 Codeus Tech, LLC</section></footer></div></body></html>
