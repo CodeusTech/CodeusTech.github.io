@@ -75,9 +75,9 @@ class About extends React.Component {
         title: 'David Bohling',
       },
       {
-        content: 'Codeus Tech is honored to be advised by **Edward Hart**, previous Deputy Director in Information Security of National Security Agency (NSA).  ' +
-                 'At NSA, Ed has overseen development of some of the world\'s most advanced and secure IoT devices. ' + 
-                 'In private industry he has played a key role in vastly successful entites, e.g. [Recorded Future](https://www.recordedfuture.com/).',
+        content: 'Codeus Tech is honored to be advised by **Edward Hart**, previous Deputy Director for Information Security of National Security Agency (NSA).  ' +
+                 'While working with NSA, Ed oversaw development of some of the world\'s most advanced and secure IoT devices. In private industry, ' + 
+                 'he has played a key role in several successful entities -- founding, managing and as a member of various boards.',
         image: `${baseUrl}img/ed.png`,
         imageAlign: 'top',
         title: 'Ed Hart',
