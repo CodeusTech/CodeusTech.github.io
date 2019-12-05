@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Codeus Tech Blog</title>
+        <link>https://CodeusTech.github.io/blog</link>
+        <description>The best place to stay up-to-date with the latest Codeus Tech news and events.</description>
+        <lastBuildDate>Fri, 29 Nov 2019 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Codeus Tech Blog</title>
+            <url>https://CodeusTech.github.io/undefined</url>
+            <link>https://CodeusTech.github.io/blog</link>
+        </image>
+        <copyright>Copyright © 2019 Codeus Tech, LLC</copyright>
+        <item>
+            <title><![CDATA[Codeus named SEWYIL finalist]]></title>
+            <link>https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html</link>
+            <guid>https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html</guid>
+            <pubDate>Fri, 29 Nov 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Startups Across the State]]></title>
+            <link>https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html</link>
+            <guid>https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html</guid>
+            <pubDate>Mon, 07 Jan 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><a href="https://www.uwyo.edu/uwyo/current/20-2/features/startups-across-the-state.html">Full Article Here</a></p>
+]]></description>
+        </item>
+    </channel>
+</rss>

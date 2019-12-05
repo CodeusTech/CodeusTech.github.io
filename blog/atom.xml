@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://CodeusTech.github.io/blog</id>
+    <title>Codeus Tech Blog</title>
+    <updated>2019-11-29T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://CodeusTech.github.io/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest Codeus Tech news and events.</subtitle>
+    <logo>https://CodeusTech.github.io/undefined</logo>
+    <rights>Copyright © 2019 Codeus Tech, LLC</rights>
+    <entry>
+        <title type="html"><![CDATA[Codeus named SEWYIL finalist]]></title>
+        <id>https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html</id>
+        <link href="https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html"/>
+        <updated>2019-11-29T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
+]]></summary>
+        <author>
+            <name>Cody Fagley</name>
+            <email/>
+            <uri>https://www.linkedin.com/in/cody-fagley/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Startups Across the State]]></title>
+        <id>https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html</id>
+        <link href="https://CodeusTech.github.io/blog/2019/01/07/startups-across-the-state.html"/>
+        <updated>2019-01-07T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.uwyo.edu/uwyo/current/20-2/features/startups-across-the-state.html">Full Article Here</a></p>
+]]></summary>
+        <author>
+            <name>Micaela Myers</name>
+            <email/>
+            <uri/>
+        </author>
+    </entry>
+</feed>
