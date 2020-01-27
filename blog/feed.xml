@@ -4,7 +4,7 @@
         <title>Codeus Tech Blog</title>
         <link>https://CodeusTech.github.io/blog</link>
         <description>The best place to stay up-to-date with the latest Codeus Tech news and events.</description>
-        <lastBuildDate>Fri, 29 Nov 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Jan 2020 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -13,6 +13,14 @@
             <link>https://CodeusTech.github.io/blog</link>
         </image>
         <copyright>Copyright © 2020 Codeus Tech, LLC</copyright>
+        <item>
+            <title><![CDATA[[UPDATE] Codeus named SEWYIL finalist]]></title>
+            <link>https://CodeusTech.github.io/blog/2020/01/26/SEWYIL-Pitch-day-Announced.html</link>
+            <guid>https://CodeusTech.github.io/blog/2020/01/26/SEWYIL-Pitch-day-Announced.html</guid>
+            <pubDate>Sun, 26 Jan 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Codeus named SEWYIL finalist]]></title>
             <link>https://CodeusTech.github.io/blog/2019/11/29/codeus-named-sewyil-finalist.html</link>
