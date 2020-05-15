@@ -227,3 +227,34 @@ hgroup {
   font-weight: 300; 
 }
 
+#alert {
+  display: none;
+  background-color: #dff0d8;
+  border: 2px solid #dff0d8;
+  border-radius: 5px;  
+  height:40px;
+  text-align:left;
+  top:25%;
+  position: relative;
+  color: #3c763d;
+  margin-left:15px;
+}
+#txt{
+  margin-left:15px;
+  margin-top:0%;
+  
+}
+#wrg {
+  display: none;
+  background-color: #ff9999;
+  border: 2px solid #ff9999;
+  border-radius: 5px;  
+  height:40px;
+  text-align:left;
+  top:50%;
+  position: relative;
+  color: #9F0303;
+  margin-left:15px;
+}
+
+
