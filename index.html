@@ -9,9 +9,11 @@
 
 	<script type="text/javascript" src="https://buttons.github.io/buttons.js"></script>
 	<script src="/js/scrollSpy.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
 	<link rel="stylesheet" href="/css/main.css"/>
 	<script src="/js/codetabs.js"></script>
-	<script src="/js/fireDB.js"></script>
+	
 </head>
 
 <body>
@@ -62,6 +64,16 @@
 </div>
 </div>
 <div class="section promoSection"><div class="promoRow">
+	<div class="alert alert-success" role="alert" id="alert">
+<p id="txt">
+  <strong>Success!</strong> You have been signed up successfully!
+  </p>
+</div>
+<div class="alert alert-success" role="alert" id="wrg">
+<p id="txt">
+  <strong>Sorry!</strong> You have entered an invalid E-mail.
+  </p>
+</div>
   <hgroup>
   <h1>Notify Upon Release</h1>
 
@@ -71,7 +83,7 @@
     <input type="email" name="email_add"><span class="highlight"></span><span class="bar"></span>
     <label>Email</label>
   </div>
-  <button value="submit" type="button" class="button buttonBlue" value= "submit_button" onclick="saveToFirebase()">Subscribe
+  <button value="submit" type="button" class="button buttonBlue" value= "submit_button" id="sub" onclick="saveToFirebase()">Subscribe
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
   </button>
 </form>
@@ -148,20 +160,36 @@
             console.log('error' + error);
             error(); // some error method
         });
+        document.getElementById('frm1').reset();
     }
-    document.getElementById('frm1').submit();
+    
 }
 function ValidateEmail(mail) 
 {
  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail))
   {
+<<<<<<< HEAD
+  	//document.getElementById('frm1').submit();
+  	pass();
+=======
   	document.getElementById('frm1').submit();
 	   
+>>>>>>> 2aa0ae2a27ea8332a4ca38e0215d32b39a491b04
     return (true)
   }
-    alert("You have entered an invalid email address!");
+    //alert("You have entered an invalid email address!");
+    fail();
     return (false)
 }
+function fail(){
 
+    $('#wrg').finish().show().delay(1000).fadeOut(6000);
+
+}
+function pass(){
+
+    $('#alert').finish().show().delay(1000).fadeOut(6000);
+
+}
 </script>>
         </body></html>
