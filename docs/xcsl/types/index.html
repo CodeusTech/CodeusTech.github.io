@@ -69,7 +69,11 @@
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="type-constructors"></a><a href="#type-constructors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Constructors</h2>
 <p><strong>Type Constructors</strong> are used to define different instances of the same type of data.</p>
-<p>See the following color example:</p>
+<p>One example of a type thats built into the langauge would be the following example of bool:</p>
+<pre><code class="hljs css language-ocaml"><span class="hljs-keyword">type</span> bool = <span class="hljs-type">True</span> | <span class="hljs-type">False</span>
+</code></pre>
+<p>Bool is a type that can be either True or False. The key word <code>type</code> means that you are defining a new data type and the name of the type is <code>bool</code>. The two constructors for that type would be <code>True</code> or <code>false</code></p>
+<p>An example of a custom built type thats not in the language is the following color example:</p>
 <pre><code class="hljs css language-ocaml"><span class="hljs-keyword">type</span> color = <span class="hljs-type">Red</span> | <span class="hljs-type">Green</span> | <span class="hljs-type">Blue</span> | <span class="hljs-type">RGB</span> <span class="hljs-keyword">of</span> (<span class="hljs-built_in">int</span>; <span class="hljs-built_in">int</span>; <span class="hljs-built_in">int</span>)
 </code></pre>
 <p><em>Red</em>, <em>Green</em>, and <em>Blue</em> are all valid constructors of the color type.  Additionally, there is a constructor (<em>RGB</em>) that accepts three integer parameters.  This set of constructors allows developers to quickly use common colors, as well as form new colors by mixing red, green, and blue.</p>
@@ -81,12 +85,13 @@
     age    : <span class="hljs-built_in">int</span>,
     height : <span class="hljs-built_in">int</span> 
 </code></pre>
-<p>Then, it can be called to create specific people.</p>
+<p>Then, it can be called to create specific people. In the following exapmple <code>jim</code> is of the type <code>person</code> who has some attributes or records that consist of <code>name</code>, <code>age</code> and <code>height</code> records.</p>
 <pre><code class="hljs css language-haskell"><span class="hljs-title">constant</span> jim <span class="hljs-keyword">of</span> person = 
     name = <span class="hljs-string">"jim"</span>,
     age = <span class="hljs-number">21</span>,
     height = <span class="hljs-number">67</span>
 </code></pre>
+<p>These attributes can then late be accessed with <code>jim.name</code> and the return would be <code>"jim"</code>. This can be done for any of the attributes and is a very useful feature of Complex types.</p>
 <hr>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/xcsl/primitives"><span class="arrow-prev">← </span><span>Literal Values</span></a><a class="docs-next button" href="/docs/xcsl/constants"><span>Constant Declarations</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#arbitrary-types">Arbitrary Types</a></li><li><a href="#type-aliases">Type Aliases</a></li><li><a href="#type-constructors">Type Constructors</a></li><li><a href="#complex-types">Complex Types</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2020 Codeus Tech, LLC</section><div id="cntr" class="cntr">Number of visitors is:<span>0</span></div></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

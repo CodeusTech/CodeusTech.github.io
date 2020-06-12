@@ -59,14 +59,15 @@
 <p><strong>if ... then ... else ...</strong> statements are designed to efficiently route program flow/functionality, via boolean logic, to one of two paths.  These are generally decided by logical and numeric comparisons.</p>
 <p>Examine the following block of code:</p>
 <pre><code class="hljs css language-ocaml"><span class="hljs-keyword">if</span> a &lt;= b
-    <span class="hljs-keyword">then</span>  <span class="hljs-type">True</span>
-    <span class="hljs-keyword">else</span>  <span class="hljs-type">False</span>
+    <span class="hljs-keyword">then</span>  <span class="hljs-type">b-a</span>
+    <span class="hljs-keyword">else</span>  <span class="hljs-type">a-b</span>
 </code></pre>
-<p><strong>If</strong> the value of <strong>'a' is less than or equal to 'b'</strong>, the entire clause will return <em>True</em>.  Otherwise, the clause will return <em>False</em>.
-This can be used to control the behavior of a function under variable situations.</p>
+<p><strong>If</strong> the value of <strong>'a' is less than or equal to 'b'</strong>, the entire clause will return the value of <em>b-a</em>.  Otherwise, the clause will return the value of <em>a-b</em>.
+This can be used to control the behavior of a function under variable situations. You can control the flow and structure of programs to make them more interesting and outputs will finally depend on inputs.
+for example the return value of the previous control logic is different if the values of 'a' and 'b' are switched</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="match-with"></a><a href="#match-with" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>match with</h2>
-<p><strong>match ... with ...</strong> statements are designed to efficiently route program flow/functionality to one of many paths.  These are typically used for handling more complex cases than <em>if ... then ... else ...</em> statements.</p>
+<p><strong>match ... with ...</strong> statements are designed to efficiently route program flow/functionality to one of many paths.  These are typically used for handling more complex cases than <em>if ... then ... else ...</em> statements. The parameter being matched with can be compared by type, value, etc. and is matched with each case you set up from the top to bottom. If all of the cases fail ie. the parameter doesn't meet any of the match cases then the default value is returned from the function.</p>
 <p>Examine the following code:</p>
 <pre><code class="hljs css language-ocaml"><span class="hljs-keyword">match</span> x <span class="hljs-keyword">with</span> 
     <span class="hljs-type">True</span>    -&gt; <span class="hljs-number">1</span>,
