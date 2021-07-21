@@ -2,12 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://CodeusTech.github.io/blog</id>
     <title>Codeus Tech Blog</title>
-    <updated>2020-01-26T06:00:00.000Z</updated>
+    <updated>2021-07-21T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://CodeusTech.github.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Codeus Tech news and events.</subtitle>
     <logo>https://CodeusTech.github.io/undefined</logo>
     <rights>Copyright © 2021 Codeus Tech, LLC</rights>
+    <entry>
+        <title type="html"><![CDATA[Xita is Public and Open Source]]></title>
+        <id>https://CodeusTech.github.io/blog/2021/07/21/Xita-open-sourced.html</id>
+        <link href="https://CodeusTech.github.io/blog/2021/07/21/Xita-open-sourced.html"/>
+        <updated>2021-07-21T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://github.com/CodeusTech/Xita-AArch64">Xita Code Repository</a></p> <p>For the last four and a half years, the Codeus team has worked on Xita as a closed source project. However, this was changed one month ago and Codeus has shifted its efforts to ensuring the Xita project is completed as quickly as...</p>]]></summary>
+        <author>
+            <name>Cody Fagley</name>
+            <email/>
+            <uri>https://www.linkedin.com/in/cody-fagley/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Codeus Wins SEWYIL Pitch Contest]]></title>
+        <id>https://CodeusTech.github.io/blog/2020/02/01/Codeus-wins-SEWYIL.html</id>
+        <link href="https://CodeusTech.github.io/blog/2020/02/01/Codeus-wins-SEWYIL.html"/>
+        <updated>2020-02-01T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
+]]></summary>
+        <author>
+            <name>Cody Fagley</name>
+            <email/>
+            <uri>https://www.linkedin.com/in/cody-fagley/</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SEWYIL Pitch Day Coming Up]]></title>
         <id>https://CodeusTech.github.io/blog/2020/01/26/SEWYIL-Pitch-day-Announced.html</id>

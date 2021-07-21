@@ -4,7 +4,7 @@
         <title>Codeus Tech Blog</title>
         <link>https://CodeusTech.github.io/blog</link>
         <description>The best place to stay up-to-date with the latest Codeus Tech news and events.</description>
-        <lastBuildDate>Sun, 26 Jan 2020 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Jul 2021 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
@@ -13,6 +13,21 @@
             <link>https://CodeusTech.github.io/blog</link>
         </image>
         <copyright>Copyright © 2021 Codeus Tech, LLC</copyright>
+        <item>
+            <title><![CDATA[Xita is Public and Open Source]]></title>
+            <link>https://CodeusTech.github.io/blog/2021/07/21/Xita-open-sourced.html</link>
+            <guid>https://CodeusTech.github.io/blog/2021/07/21/Xita-open-sourced.html</guid>
+            <pubDate>Wed, 21 Jul 2021 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><a href="https://github.com/CodeusTech/Xita-AArch64">Xita Code Repository</a></p> <p>For the last four and a half years, the Codeus team has worked on Xita as a closed source project. However, this was changed one month ago and Codeus has shifted its efforts to ensuring the Xita project is completed as quickly as...</p>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Codeus Wins SEWYIL Pitch Contest]]></title>
+            <link>https://CodeusTech.github.io/blog/2020/02/01/Codeus-wins-SEWYIL.html</link>
+            <guid>https://CodeusTech.github.io/blog/2020/02/01/Codeus-wins-SEWYIL.html</guid>
+            <pubDate>Sat, 01 Feb 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><a href="https://www.uwyo.edu/wtbc/entrepreneurship_opportunities/sewyil.html">More information on SEWYIL</a></p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[SEWYIL Pitch Day Coming Up]]></title>
             <link>https://CodeusTech.github.io/blog/2020/01/26/SEWYIL-Pitch-day-Announced.html</link>
