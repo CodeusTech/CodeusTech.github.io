@@ -58,7 +58,6 @@
 <p>Here, you can find information useful for development of X-Ita Control System (XCS) modules -- specifically targeting 64-bit ARM architecture.  For documentation and usage information, please see below:</p>
 <ul>
 <li><a href="xcs/install.html">Installation</a></li>
-<li><a href="xcs/config.html">Optimization Schemes</a></li>
 <li><a href="xcs/shell.html">Shell Commands</a></li>
 </ul>
 <hr>
@@ -94,49 +93,7 @@
 <p>XCS is not necessarily <em>similar</em> or <em>different</em> than CAML or Haskell, because they encompass different scopes.</p>
 <p>Although XCS provides a functional (ML-syntax) programming language (XCSL), it differs from other languages by also providing a free-standing bootable environment (XCSE).</p>
 <p>Unlike its imperatively-designed competition, XCSE's core foundation is specifically developed for enhanced functional programming, so other languages (e.g. Haskell) will also greatly benefit from being ran through XCS's foreign-function interpreter.</p>
-<h2><a class="anchor" aria-hidden="true" id="types-of-modules"></a><a href="#types-of-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types of Modules</h2>
-<h3><a class="anchor" aria-hidden="true" id="source-modules"></a><a href="#source-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Source Modules</h3>
-<p><strong>Source Modules</strong> are XCSL files that are meant to be executed as program (source) code.  In source modules, all XCSL code outside of function declarations is treated as executable program code.</p>
-<p>For example, see the following XCSL code:</p>
-<pre><code class="hljs"> let sum <span class="hljs-symbol">x</span> <span class="hljs-symbol">y</span> = <span class="hljs-symbol">x</span> + <span class="hljs-symbol">y</span>;;
-  sum <span class="hljs-number">1</span> <span class="hljs-number">2</span>
-</code></pre>
-<p>A source module would declare function <em>sum</em>, along with its proposed behavior, into the module tree.  Then it would execute ( <em>sum 1 2</em> ) and ultimately, return 3 to the shell.</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="header-modules"></a><a href="#header-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Header Modules</h3>
-<p><strong>Header Modules (aka Submodules)</strong> are organizational files containing loadable XCSL functions.  They differ from <em>Source Modules</em>, as none of the code outside of function declarations is ever executed.</p>
-<p>Recall the previous example module:</p>
-<pre><code class="hljs"> let sum <span class="hljs-symbol">x</span> <span class="hljs-symbol">y</span> = <span class="hljs-symbol">x</span> + <span class="hljs-symbol">y</span>;;
-  sum <span class="hljs-number">1</span> <span class="hljs-number">2</span>
-</code></pre>
-<p>While a source module would execute ( <em>sum 1 2</em> ), a submodule would not.  It would <strong>only</strong> declare the sum function for other modules' use.</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="tether-modules"></a><a href="#tether-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tether Modules</h3>
-<p><strong>Tether Modules</strong> are application interfaces for other modules.  These allow an application/module to provide a subset of publicly-callable functions by any other (tethered) module in the system.</p>
-<p>Tether modules must be <em>activated</em> for their services to be used.  When done with a tether module, it is best practice to <em>deactivate</em> the module.  See following example, where the file is named &quot;TMod.xt&quot;:</p>
-<pre><code class="hljs"> <span class="hljs-built_in">activate</span> TMod
-
- <span class="hljs-built_in">deactivate</span> TMod
-</code></pre>
-<p>Within TMod (and all other tether modules), functionality can be <em>offered</em> to other modules.</p>
-<pre><code class="hljs"> offer difference <span class="hljs-symbol">x</span> <span class="hljs-symbol">y</span> = <span class="hljs-symbol">x</span> - <span class="hljs-symbol">y</span>
-</code></pre>
-<p>Then other modules could use the following <em>request</em> to use the <em>diff</em> function.</p>
-<pre><code class="hljs css language-ocaml"> request <span class="hljs-type">TMod</span> difference <span class="hljs-number">2</span> <span class="hljs-number">1</span>
-</code></pre>
-<p>This request would call TMod, then TMod would calculate the difference and return the result.</p>
-<p>Though this may seem esoteric in the given examples, tether modules play a major role in multithreading (discussed later).</p>
-<hr>
-<h3><a class="anchor" aria-hidden="true" id="system-modules"></a><a href="#system-modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>System Modules</h3>
-<p><strong>System Modules</strong> do not exist as source code within the user environment; instead, they come defined within the XCS ISO image.  System functionality can be referenced using the following format:</p>
-<pre><code class="hljs">request<span class="hljs-built_in"> System </span>MODULE
-</code></pre>
-<p>These modules are typically ones that are required for XCSL to operate normally, e.g. memory allocator, process scheduler.  Below find one of the most useful system functions:</p>
-<pre><code class="hljs">request<span class="hljs-built_in"> System </span>kill pid
-</code></pre>
-<p>Where <em>pid</em> is some process ID number.</p>
-<hr>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/xcs/install"><span>Installation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#xcs-design-philosophy">XCS Design Philosophy</a><ul class="toc-headings"><li><a href="#similar-languages">Similar Languages</a></li><li><a href="#differences">Differences</a></li></ul></li><li><a href="#types-of-modules">Types of Modules</a><ul class="toc-headings"><li><a href="#source-modules">Source Modules</a></li><li><a href="#header-modules">Header Modules</a></li><li><a href="#tether-modules">Tether Modules</a></li><li><a href="#system-modules">System Modules</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2021 Codeus Tech, LLC</section><div id="cntr" class="cntr">Number of visitors is:<span>0</span></div></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/xcs/install"><span>Installation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#xcs-design-philosophy">XCS Design Philosophy</a><ul class="toc-headings"><li><a href="#similar-languages">Similar Languages</a></li><li><a href="#differences">Differences</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2021 Codeus Tech, LLC</section><div id="cntr" class="cntr">Number of visitors is:<span>0</span></div></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
