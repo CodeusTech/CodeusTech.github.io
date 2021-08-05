@@ -100,11 +100,11 @@ As a result, the firmware interface has incredibly strict policies on how its re
 
 <span class="hljs-comment">--  Legal, because Timer owns the requested address</span>
 <span class="hljs-comment">--  getStatus will return the data value in address: `0x3F003000`</span>
-<span class="hljs-title">let</span> getStatus = <span class="hljs-number">0x3F003000</span> *-&gt; __value    
+<span class="hljs-title">let</span> getStatus = $ <span class="hljs-number">0x3F003000</span>   
 
 <span class="hljs-comment">--  Illegal and will throw compiler error</span>
 <span class="hljs-comment">--  Timer does not own this address for the defined chip</span>
-<span class="hljs-title">let</span> getSPIStatus = <span class="hljs-number">0x3F204000</span> *-&gt; __value
+<span class="hljs-title">let</span> getSPIStatus = $<span class="hljs-number">0x3F204000</span>
 
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/xcse/chips"><span class="arrow-prev">← </span><span>Supported Chips</span></a><a class="docs-next button" href="/docs/xcse/sockets"><span>Network Sockets</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#design-philosophy">Design Philosophy</a><ul class="toc-headings"><li><a href="#formatstructure-for-chip-files">Format/Structure for *.chip files</a></li><li><a href="#firmware-drivers">Firmware Drivers</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2021 Codeus Tech, LLC</section><div id="cntr" class="cntr">Number of visitors is:<span>0</span></div></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
