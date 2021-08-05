@@ -96,11 +96,11 @@ As a result, the firmware interface has incredibly strict policies on how its re
 <p>Each chip can have a collection of firmware drivers written in Xita's functional language.  Each firmware driver addresses a unique named Firmware Interface, defined in the loaded <code>.chip</code> file (above).</p>
 <p>Once the firmware driver is defined correctly, it can freely access any memory address within the predefined interface range.  As an example, see the following Driver file:</p>
 <pre><code class="hljs css language-haskell"><span class="hljs-comment">--  Match up with firmware interfaces named "Timer" in `.chip` files</span>
-<span class="hljs-type">Firmware</span> <span class="hljs-string">"Timer"</span>
+!<span class="hljs-type">DRIVER</span> <span class="hljs-type">Timer</span>
 
 <span class="hljs-comment">--  Legal, because Timer owns the requested address</span>
 <span class="hljs-comment">--  getStatus will return the data value in address: `0x3F003000`</span>
-<span class="hljs-title">let</span> getStatus = $ <span class="hljs-number">0x3F003000</span>   
+<span class="hljs-title">let</span> getStatus = $ <span class="hljs-number">0x3F003000</span> ;;  
 
 <span class="hljs-comment">--  Illegal and will throw compiler error</span>
 <span class="hljs-comment">--  Timer does not own this address for the defined chip</span>
