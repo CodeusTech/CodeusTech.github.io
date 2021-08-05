@@ -81,13 +81,13 @@ For example, If the following function was invoked, the result would be returned
 <p>See below for a practical example.</p>
 <pre><code class="hljs css language-haskell"><span class="hljs-title">let</span> calculate   = <span class="hljs-number">3</span>;;
 <span class="hljs-title">let</span> calculate x = x % <span class="hljs-number">3</span>;;
-<span class="hljs-title">let</span> calculate x = x / <span class="hljs-number">3.14</span> 
+<span class="hljs-title">let</span> calculate x = <span class="hljs-string">"Hello: "</span> ++ x
 </code></pre>
 <p>Let's review the three definitions of <em>calculate</em>.</p>
 <ul>
 <li><strong>First <code>calculate</code> definition:</strong> there is no parameter given and it always results in the same value.</li>
 <li><strong>Second <code>calculate</code> definition:</strong> x is used in modulus, so it <em>must</em> be an integer.</li>
-<li><strong>Third <code>calculate</code> definition:</strong> x can be any number type (e.g. <em>float</em>, <em>double</em>, <em>int</em>).</li>
+<li><strong>Third <code>calculate</code> definition:</strong> x is used with concatenate operator and is added to a string.  So it needs to be a String (or List).</li>
 </ul>
 <p>This is a totally valid way to define multiple functionalities for a single function identifier, without signficantly losing runtime efficiency.</p>
 <hr>
