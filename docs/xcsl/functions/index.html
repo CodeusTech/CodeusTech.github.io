@@ -103,8 +103,11 @@ For example, If the following function was invoked, the result would be returned
 <p>So what's the difference between these two expressions?  Let's explore what happens during each of these.</p>
 <ul>
 <li>The first expression declares a function with no parameters named <code>funct</code>, equal to 1.</li>
-<li>The second expression declares a <strong>local</strong> function that temporarily sets <code>funct</code> equal to 2.</li>
+<li>The second expression declares a <strong>local</strong> function that temporarily sets <code>funct</code> equal to 2.
+<ul>
 <li>It will ONLY equal 2 in the expression directly after <code>in</code></li>
+<li>In all subsequent expressions, it will equal 1 again.</li>
+</ul></li>
 </ul>
 <hr>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/xcsl/conditions"><span class="arrow-prev">← </span><span>Conditional Expressions</span></a><a class="docs-next button" href="/docs/xcsl/utilities"><span>Utility Keywords</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#declaring-functions">Declaring Functions</a></li><li><a href="#function-parameters">Function Parameters</a></li><li><a href="#type-checking">Type Checking</a></li><li><a href="#overloading-functions">Overloading Functions</a></li><li><a href="#local-functions">Local Functions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><p class="nav-addr">Codeus Tech, LLC<br/>1938 E Harney St, Suite 146<br/>Laramie, Wyoming  82072<br/>United States</p><a href="/" class="nav-home"><img src="/img/codeus_white.png" alt="Codeus Tech" width="66" height="58"/></a><div><h5>Navigation</h5><a href="/">Home</a><a href="/docs/en/about_us.html">About Us</a><a href="/blog/">News</a><a href="/docs/en/xcs/xcs.html">XCS Wiki</a></div></section><section class="copyright">Copyright © 2021 Codeus Tech, LLC</section><div id="cntr" class="cntr">Number of visitors is:<span>0</span></div></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
